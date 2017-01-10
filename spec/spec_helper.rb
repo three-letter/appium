@@ -38,6 +38,14 @@ RSpec.configure do |config|
     Appium.promote_appium_methods RSpec::Core::ExampleGroup
   end
 
+  config.before(:example) do
+    @screenshot_id = rand(1000000)   
+  end
+
+  config.after(:example) do
+    @driver.save_screenshot("/Users/andy/Work/appium/images/iv_#{@screenshot_id}.png")
+  end
+
   config.after(:all) do
     driver_quit
   end
