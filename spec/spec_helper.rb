@@ -43,7 +43,7 @@ RSpec.configure do |config|
   end
 
   config.after(:example) do
-    @driver.save_screenshot("/Users/andy/Work/appium/images/iv_#{@screenshot_id}.png")
+    @driver.save_screenshot("images/iv_#{@screenshot_id}.png")
   end
 
   config.after(:all) do
